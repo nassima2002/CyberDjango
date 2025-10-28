@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+<title>{% block title %}Service{% endblock %}</title>
+{% block content %}
+<main id="main">
+		<div id="welcome-section">
+			<div id="layer">
+				<h1 id="welcomeHeadline">À propos</h1>
+				<p id="welcomeParagraf">Site de Location de voiture</p>
+			</div>
+		</div>
+       </main>
+
+
+<section class="about" id="about">
+            <div class="container">
+                <div class="heading text-center">
+                    <h2>À
+                        <span>propos</span></h2>
+                    <p>Venez découvrir nos agences de location voiture Maroc, NH dispose plus de 18 agences location voiture au Maroc.
+
+
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="{% static 'image/sahrij-swani-an-artificial-lake-in-meknes-morocco-leonid-andronov.jpg' %}" alt="about" class="img-fluid" width="46% ">
+                    </div>
+                    <div class="col-lg-6 " style="float: right;
+    width: 45%;
+    margin-top: -352px;">
+                        <h3>Bienvenu chez NH, groupe de location de voiture</h3>
+                        <p>Découvrez notre site de location de voiture NH, vous trouvez toutes les catégories de voiture de location sont disponibles chez nous. Des voitures de location au Maroc à un prix imbattable.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>
+                                    <i class="far fa-star"></i>Réparation De Pièce</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>
+                                    <i class="far fa-star"></i>
+                                    Assurance Voiture</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>
+                                    <i class="far fa-star"></i>Vente De Voiture</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>
+                                    <i class="far fa-star"></i>
+                                    Vidange</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>
+                                    <i class="far fa-star"></i>Assistance 24h/24 Et 7j/7</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>
+                                    <i class="far fa-star"></i>
+                                    Les services Bien organiser</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

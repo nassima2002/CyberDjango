@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+<title>{% block title %}Contact us{% endblock %}</title>
+{% block content %}
+
+<main id="main">
+		<div id="welcome-section">
+			<div id="layer">
+				<h1 id="welcomeHeadline">Contact</h1>
+				<p id="welcomeParagraf">Site de Location de voiture</p>
+			</div>
+		</div>
+       </main>
+
+<section class="contact-page-sec">
+    <div class="container">
+      <div class="clas1">
+        <div class="col-md-4">
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-map-marked"></i>
+              </div>
+              <div class="contact-info-text">
+                <h2>address</h2>
+                <span>Tarik Essalam </span>
+                <span>Maroc, Meknes,fes,Casablanca,Tanger,Rabat</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-info-text">
+                <h2>E-mail</h2>
+                <span>nasssima@gmail.com</span>
+                <span>hafsa@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-info-text">
+                <h2>Parlons</h2>
+                <span>+06 -- 80 -- 12 -- 36 -- 79</span>
+                <span>+06 -- 65 -- 96 -- 98 -- 69</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="contact-page-form" >
+            <h2>Entrer Leur Indormation</h2>
+            <form action="" method="POST">
+              {% csrf_token %}
+
+              <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input type="text" placeholder="Nom" name="name"/>
+                </div>
+              </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input type="text" placeholder="Prenom" name="lastname"/>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input type="email" placeholder="E-mail" name="email" required/>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input type="text" placeholder="Sujet" name="subject"/>
+                </div>
+              </div>
+              <div class="col-md-12 message-input">
+                <div class="single-input-field">
+                  <textarea  placeholder="Entrer Leur Message" name="message"></textarea>
+
+                </div>
+              </div>
+              <div class="single-input-fieldsbtn">
+                <input type="submit" value="Envoyer Maintenant"/>
+              </div>
+            </div>
+            </form>
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-page-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26499.29943991305!2d-5.566125504589815!3d33.8790305118009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda04569eecbce2f%3A0x65959a1da24c7918!2sTarik%20Essalam!5e0!3m2!1sfr!2sma!4v1679085007385!5m2!1sfr!2sma" width="50%" height="450" frameborder="0" style="border:1;position: relative;
+ margin-left: 583px; top:-512px" allowfullscreen></iframe>
+          </div>
+                      <p class="msg" style="color:white;background-color:orange;display:flex;justify-content:center;border-radius:5px;font-weight:800">{{context}}</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

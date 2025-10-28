@@ -1,0 +1,399 @@
+{% load static %}
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Serif:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!--  silde3--><!-- custom css file link  -->
+    <link rel="stylesheet"  href="{%  static 'css/style.css'  %}" />
+    <link rel="stylesheet"  href="{%  static 'css/styles.css'  %}" />
+
+
+     <link rel="stylesheet" href="{%  static 'css/css.css'  %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+
+
+
+</head>
+
+<body style="background-color:white">
+
+<header class="header">
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"> <img src="{%  static 'image/image.jpg'  %}"> </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#vehicles">cars</a>
+        <a href="#services">services</a>
+        <a href="#featured">About Us</a>
+        <a href="#reviews">Team's</a>
+        <a href="#contact">contact us</a>
+    </nav>
+
+    <div id="login-btn">
+        <button class="btn">login</button>
+        <i class="far fa-user"></i>
+    </div>
+
+</header>
+
+<div class="imag">
+    <h1> Bongoejds</h1>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="{%  static 'image/blackseries-2.jpg'  %}" />
+      </div>
+      <div class="swiper-slide">
+        <img src="{%  static 'image/blackseries-1.jpg'  %}" />
+      </div>
+
+
+    </div>
+    <div class="swiper-button-next" style="color: antiquewhite;"></div>
+    <div class="swiper-button-prev" style="color: antiquewhite;"></div>
+    <div class="swiper-pagination"></div>
+      <span class="swiper-pagination-bullet swiper-pagination-bullet-active" style="background: antiquewhite;
+    /* font-size: 64px; */
+    width: 12px;
+    height: 11px;" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span>
+  </div>
+</div>
+<!--login-->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-home"></i>
+        <div class="content">
+            <h3>10+</h3>
+            <p>Marque</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-car"></i>
+        <div class="content">
+            <h3>5+</h3>
+            <p>des voitures solder</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-users"></i>
+        <div class="content">
+            <h3>50+</h3>
+            <p>happy clients</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-car"></i>
+        <div class="content">
+            <h3>5+</h3>
+            <p>news cars</p>
+        </div>
+    </div>
+
+</section>
+
+
+
+<section class="vehicles" id="vehicles">
+
+    <h1 class="heading"> popular <span>vehicles</span> </h1>
+    <hr>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dh_nwhxrbBU"   title="YouTube video player" allow="autoplay ; fullscreen"  autopause=0
+allowfullscreen></iframe>
+
+</section>
+
+
+
+<!--Start What-Customer-Say Section-->
+      <section id="testimonials">
+        <!--heading--->
+        <div class="testimonial-heading">
+            <span>Comments</span>
+            <h4>Clients Says</h4>
+        </div>
+        <!--testimonials-box-container------>
+        <div class="testimonial-box-container">
+            <!--BOX-1-------------->
+            <div class="testimonial-box">
+                <!--top------------------------->
+                <div class="box-top">
+                    <!--profile----->
+                    <div class="profile">
+                        <!--img---->
+                        <div class="profile-img">
+                            <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
+                        </div>
+                        <!--name-and-username-->
+                        <div class="name-user">
+                            <strong>Liam mendes</strong>
+                            <span>@liammendes</span>
+                        </div>
+                    </div>
+                    <!--reviews------>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i><!--Empty star-->
+                    </div>
+                </div>
+                <!--Comments---------------------------------------->
+                <div class="client-comment">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+                </div>
+            </div>
+            <!--BOX-2-------------->
+            <div class="testimonial-box">
+                <!--top------------------------->
+                <div class="box-top">
+                    <!--profile----->
+                    <div class="profile">
+                        <!--img---->
+                        <div class="profile-img">
+                            <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
+                        </div>
+                        <!--name-and-username-->
+                        <div class="name-user">
+                            <strong>Noah Wood</strong>
+                            <span>@noahwood</span>
+                        </div>
+                    </div>
+                    <!--reviews------>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><!--Empty star-->
+                    </div>
+                </div>
+                <!--Comments---------------------------------------->
+                <div class="client-comment">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+                </div>
+            </div>
+            <!--BOX-3-------------->
+            <div class="testimonial-box">
+                <!--top------------------------->
+                <div class="box-top">
+                    <!--profile----->
+                    <div class="profile">
+                        <!--img---->
+                        <div class="profile-img">
+                            <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
+                        </div>
+                        <!--name-and-username-->
+                        <div class="name-user">
+                            <strong>Oliver Queen</strong>
+                            <span>@oliverqueen</span>
+                        </div>
+                    </div>
+                    <!--reviews------>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i><!--Empty star-->
+                    </div>
+                </div>
+                <!--Comments---------------------------------------->
+                <div class="client-comment">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+                </div>
+            </div>
+            <!--BOX-4-------------->
+            <div class="testimonial-box">
+                <!--top------------------------->
+                <div class="box-top">
+                    <!--profile----->
+                    <div class="profile">
+                        <!--img---->
+                        <div class="profile-img">
+                            <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
+                        </div>
+                        <!--name-and-username-->
+                        <div class="name-user">
+                            <strong>Barry Allen</strong>
+                            <span>@barryallen</span>
+                        </div>
+                    </div>
+                    <!--reviews------>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i><!--Empty star-->
+                    </div>
+                </div>
+                <!--Comments---------------------------------------->
+                <div class="client-comment">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+  <div class="teamWrapper">
+    <div class="container">
+      <h1 align="center">Our Team</h1>
+      <p align="center">Something about our team</p>
+      <div class="teamGrid">
+        <div class="colmun">
+          <div class="teamcol">
+            <div class="teamcolinner">
+              <div class="avatar"><img src="{%static 'image/team-1.jpg'%}" alt="Member"></div>
+              <div class="member-name"> <h2 align="center">Ketty Leroux</h2> </div>
+              <div class="member-info"><p align="center">Lorem Ipsum is a simply dummy text of the printing and typesetting industry.</p></div>
+              <div class="member-mail"> <p align="center"> <a href="mailto:kettyleroux@gmail.com">kettyleroux@gmail.com</a> </p> </div>
+              <div class="member-social">
+                <ul class="social-listing">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="colmun">
+          <div class="teamcol">
+            <div class="teamcolinner">
+              <div class="avatar"><img src="{%static 'image/team-2.jpg'%}" alt="Member"></div>
+              <div class="member-name"> <h2 align="center">Ketty Leroux</h2> </div>
+              <div class="member-info"><p align="center">Lorem Ipsum is a simply dummy text of the printing and typesetting industry.</p></div>
+              <div class="member-mail"> <p align="center"> <a href="mailto:kettyleroux@gmail.com">kettyleroux@gmail.com</a> </p> </div>
+              <div class="member-social">
+                <ul class="social-listing">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="colmun">
+          <div class="teamcol">
+            <div class="teamcolinner">
+              <div class="avatar"><img src="{%static 'image/team-3.jpg'%}" alt="Member"></div>
+              <div class="member-name"> <h2 align="center">Ketty Leroux</h2> </div>
+              <div class="member-info"><p align="center">Lorem Ipsum is a simply dummy text of the printing and typesetting industry.</p></div>
+              <div class="member-mail"> <p align="center"> <a href="mailto:kettyleroux@gmail.com">kettyleroux@gmail.com</a> </p> </div>
+              <div class="member-social">
+                <ul class="social-listing">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ <div class="container">
+        <h2 class="text-center font-weight-bold">Our Partners</h2>
+        <section class="customer-logos slider">
+            <div class="slide"><img src="{% static 'images/adidas.png' %}" alt="logo"></div>
+            <div class="slide"><img src="{%  static 'images/facebook.png' %}" alt="logo"></div>
+            <div class="slide"><img src="{%  static 'images/google.png' %}" alt="logo"></div>
+            <div class="slide"><img src="{%  static 'images/instagram.png' %}" alt="logo"></div>
+            <div class="slide"><img src="{%  static 'images/nike.png' %}" alt="logo"></div>
+            <div class="slide"><img src="{%  static 'images/twitter.png' %}" alt="logo"></div>
+            <div class="slide"><img src="{%  static 'images/uber.png' %}" alt="logo"></div>
+            <div class="slide"><img src="{%  static 'images/adidas.png' %}" alt="logo"></div>
+        </section>
+    </div>
+    <script src="{%  static 'js/scripts.js'  %}" ></script>
+
+
+<section class="footer" id="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>our branches</h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> india </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> japan </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> france </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> russia </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> USA </a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> vehicles </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> services </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> mumbai, india - 400104 </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+        </div>
+
+    </div>
+
+    <div class="credit"> created by mr. web designer | all rights reserved </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="{% static 'js/script.js' %}" ></script>
+        </body>
+ </html>

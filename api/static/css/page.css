@@ -1,0 +1,21 @@
+.info{
+   background: #ffb563;
+    opacity: 24.82;
+    width: 423px;
+    padding: 165px;
+    border: 1px solid white;
+}
+.ins{
+    font-size: 23px;
+    margin-top: 40px;
+    background: white;
+    opacity: 0.9;
+
+    width: 425px;
+    margin-left: -163px;
+
+    position: relative;
+    top: -31px;
+
+
+}

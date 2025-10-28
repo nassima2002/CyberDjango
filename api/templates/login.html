@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+<title>{% block title %}Login{% endblock %}</title>
+{% block content %}
+<main id="main">
+		<div id="welcome-section">
+			<div id="layer">
+                    <h1 id="welcomeHeadline">connexion</h1>
+				<p id="welcomeParagraf">Site de Location de voiture</p>
+			</div>
+		</div>
+       </main>
+<div class="containerss">
+
+  <div class="form-panel">
+    <h1>connexion</h1>
+    <form action="{% url 'login' %}" method="POST">
+              {% csrf_token %}
+
+      <div class="form-control">
+        <input type="text" required name="name">
+        <label>Nom</label>
+      </div>
+      <div class="form-control">
+        <input type="password" required name="password">
+        <label>mot de passe</label>
+      </div>
+      <button class="btnn">Connexion</button>
+        <p class="msg" style="color:red";>{{mesages}}</p>
+
+       <a  class="fontawsom" href="{% url 'singup' %}"><i class="fa-solid fa-user-plus"></i></a>
+    </form>
+  </div>
+  <div class="picture-panel"></div>
+</div>
+
+
+{% endblock %}

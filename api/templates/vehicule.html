@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+<title>{% block title %}Nos véhicules{% endblock %}</title>
+{% block content %}
+
+<main id="main">
+		<div id="welcome-section">
+			<div id="layer">
+				<h1 id="welcomeHeadline">Nos véhicules</h1>
+				<p id="welcomeParagraf">Site de Location de voiture</p>
+			</div>
+		</div>
+       </main>
+  <div class="row-car">
+    <div class="product-section">
+        {% if page_obj %}
+      <div class="product-grid">
+         {% for vehicule in page_obj %}
+          <div class="card-car">
+              {% if vehicule.prix_promo %}
+                 <div class="card-pill"> Sale </div>
+              {% endif %}
+            <a href="#"><img class="card-img-car" src="{{ vehicule.image.url }}" alt="{{ vehicule.nom }}"></a>
+            <div class="flex-row space-between w-full mb-sm">
+              <p class="product-brand-car">{{ vehicule.marque }}</p>
+              <p class="product-cat hide"></p>
+            </div>
+            <h1 class="product-name-car">{{ vehicule.nom }}</h1>
+
+            <div class="flex-row">
+                {% if vehicule.prix_promo %}
+                  <p class="price strike"><span>{{ vehicule.prix_regulier }}</span>DH/J</p>
+                  <p class="price"><span>{{ vehicule.prix_promo}}</span>DH/J</p>
+                {% else %}
+                   <p class="price"><span>{{ vehicule.prix_regulier }}</span>DH/J</p>
+                {% endif %}
+            </div>
+            <div class="separation-name"></div>
+            <div class="btn-reserve-car">
+              <a href="{% url 'details_vehicule' vehicule.id %}" class="icon-link">Details
+                <svg fill="none" class="rubicons arrow-right-up" xmlns="http://www.w3.org/2000/svg" width="auto"
+                  height="auto" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="M17.9645 12.9645l.071-7h-7.071" stroke-linecap="round"></path>
+                  <path d="M5.9645 17.9645l12-12" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+     <div class="pagination">
+           {% if page_obj.has_previous %}
+             <a href="?page={{ page_obj.previous_page_number }}&marque={{ marque_search }}&annee={{ annee_search }}&type_vehicule={{ type_vehicule_search }}">&laquo;</a>
+            {% endif %}
+             <a href="#" class="active">{{ page_obj.number }}</a>
+
+          {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&marque={{ marque_search }}&annee={{ annee_search }}&type_vehicule={{ type_vehicule_search }}">&raquo;</a>
+          {% endif %}
+      </div>
+          {% else %}
+             <p class="message_search">Aucun résultat de recherche trouvé</p>
+          {% endif %}
+    </div>
+
+    <form class="form_search" method="GET" action="{% url 'vehicules' %}">
+
+      <h1>Recherche</h1>
+
+      <div class="separation"></div>
+
+      <div class="corps-formulaire">
+        <select class="groupe" name="marque">
+             <option value="" >Marque</option>
+            {% for marque in marques %}
+            <option value="{{ marque }}" {% if marque == marque_search %}selected{% endif %} >{{ marque }}</option>
+            {% endfor %}
+        </select>
+
+        <select class="groupe" name="annee">
+            <option value="">Année</option>
+            {% for annee in annees %}
+            <option value="{{ annee }}" {% if annee == annee_search %}selected{% endif %}>{{ annee }}</option>
+            {% endfor %}
+        </select>
+        <select class="groupe" name="type_vehicule">
+            <option value="">Type Véhicule</option>
+            {% for type_vehicule in types_vehicules %}
+            <option value="{{ type_vehicule }}" {% if type_vehicule == type_vehicule_search %}selected{% endif %} >{{ type_vehicule }}</option>
+            {% endfor %}
+        </select>
+
+
+      </div>
+
+
+      <div class="pied-formulaire" align="center">
+        <button type="submit">Rechercher</button>
+      </div>
+
+    </form>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+<title>{% block title %}contrat{% endblock %}</title>
+{% block content %}
+<div class="main-container-details" style="margin-top: 241px;
+    margin-bottom: 296px;align-items: center;">
+    <style>
+    .btn-verifie {
+        background-color: #ffb563;
+        color: white;
+        box-shadow: 0 18px 30px -2px hsl(26, 100%, 55%, 0.3);
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 700;
+        border-radius: 100px;
+        cursor: pointer;
+        height: 45px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-align: center;
+        padding: 9px;
+        margin-left: 56px;
+    }
+    .btn-verifie:hover {
+        background-color: #130f40;
+        color: white;
+    }
+    </style>
+    <br><br>
+    <p class="message_search">Veuillez télécharger votre contrat Merci.</p>
+    <button class="btn-verifie"><a href="{% url 'contrat_doc' contrat.id %}" target="_blank">Télécharger</a></button>
+</div>
+{% endblock %}

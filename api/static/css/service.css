@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+#welcome-section {
+	background-image: url("/static/image/image3.jpg");
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 76vh;
+}
+
+#layer {
+	background-color: rgb(71 62 24 / 43%);
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#welcomeHeadline {
+   font-size: 498%;
+	background-color: transparent;
+	color: white;
+	font-weight: 800;
+	text-align: center;
+	padding-top: 35vh;
+}
+
+#welcomeParagraf {
+	background-color: transparent;
+	color: white;
+	text-align: center;
+    font-size: 1.6vw;
+    font-weight: 500;
+}
+
+.divHeadline {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 5vw;
+	color: white;
+	font-size: 2vw;
+}
+
+
+
+.services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.services .box-container .box{
+    padding:2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    text-align: center;
+}
+
+.services .box-container .box i{
+    height:6rem;
+    width:6rem;
+    line-height: 6rem;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background:#ffb563;
+    color:var(--black);
+}
+
+.btn:hover {
+    background: #ffffff;
+}
+
+.heading{
+    padding-bottom: 3rem;
+    text-align: center;
+    font-size: 4.5rem;
+    font-style: oblique;
+    color: #130f40;
+    font-family: 'IBM Plex Sans',Serif;
+    font-weight: 600;
+}
+
+
+section {
+    padding: 8rem 9%;
+    background-color: white;
+}
+
+.services .box-container .box h3{
+    font-size: 2.2rem;
+    color:var(--black);
+}
+
+.services .box-container .box p{
+    line-height: 1.8;
+    padding:1rem 0;
+    font-size: 1.4rem;
+    color:var(--light-color);
+}
+
+.services .box-container .box:hover{
+    background: var(--black);
+}
+
+.services .box-container .box:hover h3{
+    color:#fff;
+}
+
+.services .box-container .box:hover p{
+    color:#eee;
+}
+
+
+
+a{
+    text-decoration: none;
+}
+

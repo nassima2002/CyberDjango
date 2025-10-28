@@ -1,0 +1,36 @@
+ .navbar{
+        margin-left:-109px}
+.header .logo{
+    font-size: 2.5rem;
+    color:var(--black);
+    font-weight: bold;
+    margin-top: -20px
+}
+.header .logo img{
+        width: 220px;
+        height:74px;
+}
+
+.header .navbar a{
+    margin:18px 2rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+
+
+}
+.header .navbar a:hover{
+    color: #f1af11;
+}
+
+.nh{
+top: 169px;
+    color: white;
+    position: relative;
+    font-size: 5rem;
+
+    font-family: Segoe UI, Sans-Serif;
+    text-shadow: 2px 2px 2px #666;
+    font-weight: 900;
+    font-style: oblique;
+    text-align: center;
+}

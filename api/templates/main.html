@@ -1,0 +1,421 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Dashboard - Utilisateur{% endblock %}
+
+{% block userinfo %}
+<div id="login-btn">
+    <a href="{% url 'main' %}">
+        <img class="btn" src="{% static 'image/utilisateur-de-profil.png' %}" alt="Profile" />
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Welcome Section -->
+<section class="dashboard-hero">
+    <div class="hero-text">
+        <h1>DASHBOARD</h1>
+        <p>Bonjour {{ utilisateur.name }}, Vérifiez Votre Commande</p>
+    </div>
+</section>
+
+<!-- Dashboard Layout -->
+<div class="dashboard-wrapper">
+    <!-- Sidebar Menu -->
+    <aside class="side-menu">
+        <button class="menu-btn active" id="btn-profile">
+            <i class="fas fa-user"></i>
+            Voir Le Profil
+        </button>
+        <button class="menu-btn" id="btn-commande">
+            <i class="fas fa-shopping-cart"></i>
+            Commandes
+        </button>
+        <a class="menu-btn" href="{% url 'logout' %}">
+            <i class="fas fa-sign-out-alt"></i>
+            Se Déconnecter
+        </a>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="dashboard-content">
+        <!-- Profile Section -->
+        <div class="section-view" id="view-profile">
+            <div class="content-box">
+                <div class="box-header">
+                    <h2>Votre Profil</h2>
+                </div>
+                <div class="box-body">
+                    <form>
+                        <div class="form-row-split">
+                            <div class="input-field">
+                                <label>NOM</label>
+                                <input type="text" value="{{ utilisateur.name }}" readonly>
+                            </div>
+                            <div class="input-field">
+                                <label>TÉLÉPHONE</label>
+                                <input type="tel" value="{{ utilisateur.number }}" readonly>
+                            </div>
+                        </div>
+                        <div class="form-row-split">
+                            <div class="input-field">
+                                <label>EMAIL</label>
+                                <input type="email" value="{{ utilisateur.email }}" readonly>
+                            </div>
+                            <div class="input-field">
+                                <label>MOT DE PASSE</label>
+                                <input type="password" value="••••••••" readonly>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders Section -->
+        <div class="section-view" id="view-commande" style="display: none;">
+            <div class="content-box">
+                <div class="box-header">
+                    <h2>Vos Commandes</h2>
+                </div>
+                <div class="box-body">
+                    {% if contrat %}
+                    <div class="table-responsive">
+                        <table class="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>Nom De Véhicule</th>
+                                    <th>Modèle</th>
+                                    <th>Prix Location</th>
+                                    <th>Date De Réservation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for contrat_item in contrat %}
+                                <tr>
+                                    <td data-label="Nom De Véhicule">{{ contrat_item.vehicule.nom }}</td>
+                                    <td data-label="Modèle">{{ contrat_item.vehicule.modele }}</td>
+                                    <td data-label="Prix Location">{{ contrat_item.prix_total }} DH</td>
+                                    <td data-label="Date">{{ contrat_item.date_reservation|date:"d/m/Y" }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="no-data">
+                        <i class="fas fa-inbox"></i>
+                        <p>Aucune Commande Trouvée</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Hero Section */
+.dashboard-hero {
+    background: linear-gradient(to right, #5dade2, #f5b041);
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hero-text h1 {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    letter-spacing: 3px;
+}
+
+.hero-text p {
+    color: white;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Dashboard Wrapper */
+.dashboard-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Sidebar Menu */
+.side-menu {
+    width: 220px;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    background: white;
+    border: none;
+    border-radius: 6px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.menu-btn i {
+    font-size: 16px;
+}
+
+.menu-btn:hover {
+    background: #fff3e0;
+}
+
+.menu-btn.active {
+    background: #ffb563;
+    color: white;
+}
+
+/* Main Content */
+.dashboard-content {
+    flex: 1;
+}
+
+.section-view {
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.content-box {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.box-header {
+    background: #ffb563;
+    padding: 20px 25px;
+}
+
+.box-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.box-body {
+    padding: 30px 25px;
+}
+
+/* Form Fields */
+form {
+    max-width: 100%;
+}
+
+.form-row-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+}
+
+.input-field label {
+    display: block;
+    color: #333;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #fafafa;
+    color: #333;
+}
+
+.input-field input:focus {
+    outline: none;
+    border-color: #ffb563;
+}
+
+/* Orders Table */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table thead {
+    background: #f5f5f5;
+}
+
+.orders-table th {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    color: #555;
+    border-bottom: 2px solid #ddd;
+}
+
+.orders-table td {
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
+
+.orders-table tbody tr:hover {
+    background: #fafafa;
+}
+
+/* No Data */
+.no-data {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.no-data i {
+    font-size: 50px;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.no-data p {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-hero {
+        padding: 40px 15px;
+        margin-top: 50px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .dashboard-wrapper {
+        flex-direction: column;
+        margin: 20px auto;
+    }
+
+    .side-menu {
+        width: 100%;
+    }
+
+    .box-header {
+        padding: 15px 20px;
+    }
+
+    .box-header h2 {
+        font-size: 18px;
+    }
+
+    .box-body {
+        padding: 20px 15px;
+    }
+
+    .form-row-split {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .input-field {
+        margin-bottom: 15px;
+    }
+
+    /* Mobile Table */
+    .orders-table thead {
+        display: none;
+    }
+
+    .orders-table,
+    .orders-table tbody,
+    .orders-table tr,
+    .orders-table td {
+        display: block;
+    }
+
+    .orders-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 10px;
+    }
+
+    .orders-table td {
+        padding: 8px 0;
+        border: none;
+        text-align: right;
+        position: relative;
+    }
+
+    .orders-table td::before {
+        content: attr(data-label) ": ";
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+        font-size: 12px;
+        color: #555;
+    }
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#view-profile').show();
+    $('#view-commande').hide();
+
+    $('#btn-profile').on('click', function() {
+        $('#view-commande').hide();
+        $('#view-profile').fadeIn(200);
+        $('.menu-btn').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $('#btn-commande').on('click', function() {
+        $('#view-profile').hide();
+        $('#view-commande').fadeIn(200);
+        $('.menu-btn').removeClass('active');
+        $(this).addClass('active');
+    });
+});
+</script>
+{% endblock %}

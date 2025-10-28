@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% load static %}
+<title>{% block title %}{{ vehicule.nom }}{% endblock %}</title>
+
+{% block content %}
+
+<section class="container_details">
+<div class="sous_container_details">
+    <hr class="separation-name">
+    <h1 class="welcomeHeadline_details"><strong>{{ vehicule.nom }}</strong></h1>
+    <hr class="separation-name">
+    </div>
+</section>
+
+
+<!-- Main --------------------------------------------------->
+    <div class="main-container-details">
+        <input id="vehicule_id" type= "hidden" value="{{ vehicule.id }}"/>
+        <!-- Product Images --------------------------------------------------->
+        <div class="left-details">
+            <div class="product-details">
+                <img src="{{ vehicule.image.url }}" alt="{{ vehicule.nom }}" class="img-product">
+            </div>
+            <div class="form-verifie">
+                <div class="column-form-verifie">
+                    <div class="input-box-verifie">
+                        <label style="font-size:16px;color: hsl(212deg 76.27% 11.57%);">Date de début</label>
+                        <input id="dateDebut" type="date" placeholder="Entrez date debut" required />
+                    </div>
+                    <div class="input-box-verifie">
+                        <label style="font-size:16px;color: hsl(212deg 76.27% 11.57%);">Date de fin</label>
+                        <input id="dateFin" type="date" placeholder="Entrez date fin" required />
+                    </div>
+                    <button class="btn-verifie" id="btn-verifier">Vérifier</button>
+                </div>
+                <br>
+                <div id="resultat-verif"></div>
+                <div>
+                    <a href="{% url 'contrat_vehicule' %}"> <button class="btn-details-reserve" id="btn-details-reserve" style="display:none" ><img
+                        src="https://raw.githubusercontent.com/frontendmentorio/ecommerce-product-page/e6f54e15253b9446814d89e3709730eb174136bd/images/icon-cart.svg"
+                        alt="cart-btn-details-icon" class="cart-btn-details-icon"> Réserver</button></a>
+                    <a href="{% url 'login' %}"> <button class="btn-details-reserve"  id="btn-connecter" style="display:none;font-size:13px;padding: 8px 70px;width: 279px;" > Se connecter</button></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Product Description --------------------------------------------------->
+        <div class="right-details">
+            <small>>>> {{vehicule}}</small>
+            <div class="price-product-details">
+                  {% if vehicule.prix_promo %}
+                     <div class="discounted-price">
+                        <strong class="current-price">{{ vehicule.prix_promo}} DH/J</strong>
+                    </div>
+                   <s class="strike">{{ vehicule.prix_regulier }} DH/J</s>
+                {% else %}
+                   <s class="strike">{{ vehicule.prix_regulier }} DH/J</s>
+                {% endif %}
+            </div>
+
+                <div class="ligne-details">
+                    <div class="titre-details">
+                        <h4 class="lt">Nom</h4>
+                    </div>
+                    <div class="infor">
+                        {{ vehicule.nom }}
+                    </div>
+
+                </div>
+                <div class="separt"></div>
+
+                <div class="ligne-details">
+                    <div class="titre-details">
+                        <h4 class="lt">Modèle</h4>
+                    </div>
+                    <div class="infor">
+                        {{ vehicule.modele }}
+                    </div>
+                </div>
+                <div class="separt"></div>
+                <div class="ligne-details">
+                    <div class="titre-details">
+                        <h4 class="lt">Marque</h4>
+                    </div>
+                    <div class="infor">
+                        {{ vehicule.marque }}
+                    </div>
+                </div>
+                <div class="separt"></div>
+                <div class="ligne-details">
+                    <div class="titre-details">
+                        <h4 class="lt">Année</h4>
+                    </div>
+                    <div class="infor">
+                        {{ vehicule.annee }}
+                    </div>
+                </div>
+                <div class="separt"></div>
+                <div class="ligne-details">
+                    <div class="titre-details">
+                        <h4 class="lt">Couleur</h4>
+                    </div>
+                    <div class="infor">
+                        {{ vehicule.couleur }}
+                    </div>
+                </div>
+                <div class="separt"></div>
+
+                <div class="ligne-details">
+                    <div class="titre-details">
+                        <h4 class="lt">Kilométrage</h4>
+                    </div>
+                    <div class="infor">
+                        {{ vehicule.kilometrage }}
+                    </div>
+                </div>
+                <div class="separt"></div>
+
+                <div class="ligne-details">
+                    <div class="titre-details">
+                        <h4 class="lt">Nombre de place</h4>
+                    </div>
+                    <div class="infor">
+                        {{ vehicule.nombre_de_place }}
+                    </div>
+                </div>
+                <div class="separt"></div>
+
+                <div class="ligne-details">
+                    <div class="titre-details">
+                        <h4 class="lt">Carburant</h4>
+                    </div>
+                    <div class="infor">
+                        {{ vehicule.carburant }}
+                    </div>
+                </div>
+                <div class="separt"></div>
+
+                <div class="ligne-details">
+                    <div class="titre-details">
+                        <h4 class="lt">Puissance</h4>
+                    </div>
+                    <div class="infor">
+                        {{ vehicule.puissance }}
+                    </div>
+                </div>
+                <div class="separt"></div>
+
+                <div class="ligne-details">
+                    <div class="titre-details">
+                        <h4 class="lt">Transmission</h4>
+                    </div>
+                    <div class="infor">
+                        {{ vehicule.transmission }}
+                    </div>
+                </div>
+
+
+
+        </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    $('#btn-verifier').click(function() {
+    var dateDeb=$("#dateDebut").val();
+    var dateFin=$("#dateFin").val();
+    var vehicule_id=$("#vehicule_id").val();
+
+    // Start Ajax
+        $.ajax({
+            url: '/VerifierDate/',
+            data: {
+                dateDeb: dateDeb,
+                dateFin: dateFin,
+                vehicule_id:vehicule_id
+            },
+            dataType: 'json',
+
+            success: function (response) {
+                if (response.id) {
+                    if (response.disponible) {
+                        $('#resultat-verif').text("Le véhicule est disponible.");
+                        $('#btn-details-reserve').show();
+                    } else {
+                        $('#resultat-verif').text("Le véhicule n'est pas disponible.");
+                    }
+                } else {
+                    $('#resultat-verif').text("Veuillez vous connecter d'abord.");
+                    $('#btn-connecter').show();
+                }
+            }
+        });
+        // End
+    });
+
+</script>
+{% endblock %}
+
+
+
+
+

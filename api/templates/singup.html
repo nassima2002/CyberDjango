@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+<title>{% block title %}Login{% endblock %}</title>
+{% block content %}
+<main id="main">
+		<div id="welcome-section">
+			<div id="layer">
+                    <h1 id="welcomeHeadline">Inscription</h1>
+				<p id="welcomeParagraf">Site de Location de voiture</p>
+			</div>
+		</div>
+       </main>
+<div class="containerss">
+
+  <div class="form-panel">
+    <h1>Inscription</h1>
+    <form action="" method="post">
+              {% csrf_token %}
+
+      <div class="form-control">
+        <input type="text" required name="name">
+        <label>Nom</label>
+      </div>
+      <div class="form-control">
+        <input type="number" required  name="number">
+        <label>Numéro De Téléphone</label>
+      </div>
+      <div class="form-control">
+        <input type="email" required name="email">
+        <label>Email</label>
+      </div>
+       <div class="form-control">
+        <input type="password"  name="password" required>
+        <label>Mot De Passe</label>
+      </div>
+
+      <button class="btnn">Valider</button>
+      <p class="textt">retour a page connextion ? <a href="{% url 'login' %}">Retour</a></p>
+    </form>
+  </div>
+  <div class="picture-panel"></div>
+</div>
+
+
+{% endblock %}

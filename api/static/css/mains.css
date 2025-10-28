@@ -1,0 +1,571 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap");
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font: 400 14px Roboto, sans-serif;
+  background: #f6f4fc;
+  -webkit-font-smoothing: antialiased;
+  outline: 0;
+}
+
+em {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+.layoute {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px;
+  background-color: #f6f4fc;
+  margin: 0 -9px;
+}
+
+.contente {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  margin: 5.5em 0;
+  width: 100%;
+  min-width: 260px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.headere {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4em;
+  background-color: #f6f4fc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em;
+  border-bottom: 1px solid #3ba8d4;
+}
+
+.header-usere {
+  font-size: 1.2em;
+  color: #3ba8d4;
+}
+
+.header-usere > i {
+  padding-right: 10px;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+
+.sidebar {
+  position: fixed;
+  top: 5em;
+  left: 20px;
+  width: 15em;
+  height: calc(100vh - 6em);
+  max-height: 65%;
+  background: #ffffff;
+  font-size: 1.2em;
+  border: 2px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: left 0.3s ease;
+}
+
+.sidebar:hover,
+.sidebar:focus,
+.headere:focus + .sidebar,
+.headere:hover + .sidebar {
+  left: 20px;
+}
+
+.sidebar ul {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 15em;
+  list-style: none;
+}
+
+.sidebar ul li {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.sidebar-list-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3em;
+  color: #394951;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  padding: 0;
+}
+
+.sidebar-list-item em {
+  position: absolute;
+  top: 50%;
+  left: 4em;
+  transform: translateY(-50%);
+}
+
+.sidebar-list-item:hover,
+.sidebar-list-item.active {
+  background: #ffb563;
+  color: #fff;
+}
+
+.sidebar-list-item > i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4em;
+  height: 3em;
+}
+
+.sidebar-list-item > i::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ============================================
+   MAIN CONTENT - PROFILE SECTION
+   ============================================ */
+
+.main-headere {
+  background-color: #fefefe;
+  border-radius: 40px;
+  padding: 40px;
+  width: 100%;
+  max-width: 700px;
+  margin-left: 270px;
+  border: 2px solid #000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-titlee {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.main-headere .main-titlee h1 {
+  margin: 0 0 20px 0;
+  font-size: 42px;
+  color: #ffb563;
+  font-weight: 500;
+}
+
+.main-forme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ============================================
+   MAIN CONTENT - RESERVATION SECTION
+   ============================================ */
+
+.main-headere-reservation {
+  background-color: #fefefe;
+  border-radius: 40px;
+  padding: 40px;
+  width: 100%;
+  max-width: 900px;
+  margin-left: 270px;
+  border: 2px solid #000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-titlee-reservation {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.main-headere-reservation .main-titlee-reservation h1 {
+  margin: 0 0 20px 0;
+  font-size: 42px;
+  color: #ffb563;
+  font-weight: 500;
+}
+
+.table_reservation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table_reservation .table_info {
+  width: 100%;
+  border: 4px solid #9ea7af;
+  background: white;
+  border-radius: 8px;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.table_info tr {
+  border-bottom: 4px solid #9ea7af;
+}
+
+.table_info tr:last-child {
+  border-bottom: none;
+}
+
+.table_info tr th {
+  background-color: #e5e7e9;
+  padding: 15px 20px;
+  font-weight: 600;
+  color: #394951;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.table_info tr td {
+  border-left: 4px solid #9ea7af;
+  padding: 15px 25px;
+  text-align: center;
+  color: #394951;
+}
+
+.table_info tr td:first-child {
+  border-left: none;
+}
+
+.table_info tbody tr:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+/* Empty state */
+.no-data {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+
+input,
+button,
+textarea {
+  font: 400 14px Roboto, sans-serif;
+}
+
+form {
+  width: 100%;
+}
+
+form input {
+  width: 100%;
+  height: 50px;
+  color: #394951;
+  background-color: #fff;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  padding: 0 20px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #3ba8d4;
+}
+
+form input::placeholder {
+  color: #a6a6a6;
+}
+
+.main-headere .main-forme form {
+  width: 100%;
+  max-width: 550px;
+}
+
+.main-headere .main-forme form label {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #394951;
+  margin-bottom: 8px;
+  margin-top: 15px;
+}
+
+.main-headere .main-forme form label:first-of-type {
+  margin-top: 0;
+}
+
+.main-headere .main-forme form input {
+  margin-bottom: 0;
+}
+
+/* Form groups */
+.main-headere .main-forme form .input-groupe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.input-houre {
+  height: 50px;
+}
+
+#fhourdiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+#fhourdiv > input {
+  width: calc(50% - 7.5px);
+}
+
+.main-headere .main-forme form .input-groupe input + input {
+  margin-left: 8px;
+}
+
+.main-headere .main-forme form .input-groupe .all_daye {
+  width: 120px;
+  height: 50px;
+  text-align: right;
+  padding: 18px 0;
+  margin-top: 8px;
+  color: #a6a6a6;
+}
+
+.main-headere .main-forme form .input-groupe .checkbox {
+  width: 60px;
+  height: 30px;
+  color: #a6a6a6;
+  border: 1px solid #dcdce6;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.main-headere .main-forme form .input-groupe .houre {
+  width: 219px;
+}
+
+/* Buttons */
+.main-headere .main-forme form .buttone {
+  width: 100%;
+  height: 60px;
+  background: #3ba8d4;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  margin: 30px 0 0 0;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.buttone:hover {
+  background: #2e8ab0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(59, 168, 212, 0.3);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footere {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4em;
+  background-color: #f6f4fc;
+  border-top: 1px solid #b3b3b3;
+  z-index: 1;
+}
+
+.footer_signe {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media screen and (max-width: 1024px) {
+  .main-headere,
+  .main-headere-reservation {
+    margin-left: 200px;
+    max-width: calc(100% - 220px);
+  }
+
+  .sidebar {
+    width: 12em;
+  }
+
+  .sidebar-list-item em {
+    left: 3.5em;
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .layoute {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -15em;
+    z-index: 10;
+  }
+
+  .sidebar:hover,
+  .sidebar:focus {
+    left: 0;
+  }
+
+  .main-headere,
+  .main-headere-reservation {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  .main-titlee h1,
+  .main-titlee-reservation h1 {
+    font-size: 32px;
+  }
+
+  .table_reservation {
+    overflow-x: auto;
+  }
+
+  .table_info tr th,
+  .table_info tr td {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  .contente {
+    margin: 5em 0 2em;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .headere {
+    padding: 1em;
+  }
+
+  .header-usere {
+    font-size: 1em;
+  }
+
+  .main-headere,
+  .main-headere-reservation {
+    padding: 20px 15px;
+  }
+
+  .main-titlee h1,
+  .main-titlee-reservation h1 {
+    font-size: 24px;
+  }
+
+  form input {
+    height: 45px;
+    font-size: 13px;
+  }
+
+  .buttone {
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .table_info {
+    font-size: 11px;
+  }
+
+  .table_info tr th,
+  .table_info tr td {
+    padding: 8px 10px;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}

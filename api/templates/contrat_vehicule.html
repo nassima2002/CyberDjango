@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+<title>{% block title %}Car{% endblock %}</title>
+{% block content %}
+
+
+  <section class="reserve">
+    <section class="container_reserve">
+      <small>
+        <center>Details de votre Réservation</center>
+      </small>
+      <div class="produit_reserve">
+        <div class="card_reserve">
+          <img src="{{vehicule.image}}" alt="{{vehicule.nom}}" class="img-reserve">
+        </div>
+        <div class="info_product">
+          <table class="table_info">
+            <tr>
+              <th>Nom Vehicule</th>
+              <td>{{vehicule.nom}}</td>
+            </tr>
+            <tr>
+              <th>Modèle</th>
+              <td>{{vehicule.modele}}</td>
+            </tr>
+            <tr>
+              {% if vehicule.prix_promo %}
+                <th>Prix par jour</th>
+                <td><span>{{vehicule.prix_promo}}</span>DH/J</td>
+              {% else %}
+                   <th>Prix par jour</th>
+                <td><span>{{ vehicule.prix_regulier }}</span>DH/J</td>
+              {% endif %}
+            </tr>
+             <tr>
+              <th>Prix Totale</th>
+              <td><span>{{ prix_total }}</span>DH/J</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <form class="form_reserve" method="GET" action="{% url 'contrat_vehicule' %}">
+        <div class="column_reserve">
+          <div class="input-box">
+            <label>Nom</label>
+            <input type="text" name="nom"  value="{{ client.name }}" readonly />
+          </div>
+           <div class="input-box">
+            <label>Télephone</label>
+            <input type="text" name="telephone" value="{{ client.number }}" readonly />
+          </div>
+
+        </div>
+        <div class="column_reserve">
+          <div class="input-box">
+            <label>Email</label>
+            <input type="text" name="email" value="{{ client.email }}" readonly />
+          </div>
+        </div>
+        <div class="column_reserve">
+            <div class="input-box">
+              <label>Date de début</label>
+              <input type="date" name="date_debut" value="{{ date_debut }}" readonly />
+            </div>
+            <div class="input-box">
+              <label>Date de fin</label>
+              <input type="date" name="date_fin" value="{{ date_fin }}" readonly />
+            </div>
+        </div>
+
+        <div class="btn-form-reserve">
+           <button class="btn-form-reserve-confirm"><a href="{% url 'annulerReservation' %}">Annuler</a></button>
+          <button class="btn-form-reserve-confirm"><a href="{% url 'confirmerReservation' %}">Confirmer</a></button>
+        </div>
+      </form>
+    </section>
+  </section>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
