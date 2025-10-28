@@ -8,6 +8,7 @@ from django.contrib.auth import logout
 from docx import Document
 import pythoncom
 import docx2pdf
+from django.db import connection
 
 from .models import ContactForm, Registre, Vehicule, Contrat
 
@@ -48,7 +49,7 @@ def inscrir(request):
 
 
 
-def login(request):
+#def login(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         password = request.POST.get('password')
@@ -66,6 +67,31 @@ def login(request):
 
     return render(request, 'login.html')
 
+# ------------------------------
+# Injection sql vulnurabiliter
+# ------------------------------
+
+def login(request):
+    if request.method == "POST":
+        username = request.POST.get("name")
+        password = request.POST.get("password")
+
+        # ⚠️ Vulnérable à SQL Injection volontairement
+        query = f"SELECT * FROM inscription WHERE name = '{username}' AND password = '{password}'"
+
+        with connection.cursor() as cursor:
+            cursor.execute(query)
+            user = cursor.fetchone()
+
+        if user:
+            request.session['id'] = user[0]  # suppose que l'id est la première colonne
+            return JsonResponse({"status": "success", "message": "Connexion réussie"})
+        else:
+            return JsonResponse({"status": "error", "message": "Nom d'utilisateur ou mot de passe incorrect"})
+    
+    return JsonResponse({"error": "Méthode non autorisée"}, status=405)
+
+   
 
 def logout_view(request):
     logout(request)
