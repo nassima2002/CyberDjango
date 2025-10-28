@@ -46,26 +46,6 @@ def inscrir(request):
 
     return render(request, 'singup.html')
 
-# ------------------------------
-# vulnurabiliter 
-# ------------------------------
-
-#def login(request):
-    if request.method == "POST":
-        username = request.POST.get("name")
-        password = request.POST.get("password")
-
-        # ⚠️ Vulnérabilité : injection SQL possible
-        query = f"SELECT * FROM inscription WHERE name = '{username}' AND password = '{password}'"
-        with connection.cursor() as cursor:
-            cursor.execute(query)
-            user = cursor.fetchone()
-
-        if user:
-            return JsonResponse({"status": "success", "message": "Connexion réussie"})
-        else:
-            return JsonResponse({"status": "error", "message": "Nom d'utilisateur ou mot de passe incorrect"})
-    return JsonResponse({"error": "Méthode non autorisée"}, status=405)
 
 
 def login(request):
