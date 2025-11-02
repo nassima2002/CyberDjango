@@ -1,0 +1,4 @@
+[SECURITY] WARNING 2025-11-02 16:04:16,993 | Échec d'authentification pour: client' OR '1'='1 | Module: views
+[SECURITY] WARNING 2025-11-02 16:05:40,011 | Échec d'authentification pour: client' OR '1'='1 | Module: views
+[SECURITY] WARNING 2025-11-02 16:06:14,081 | Échec d'authentification pour: ' OR '1'='1' -- | Module: views
+[SECURITY] WARNING 2025-11-02 16:07:55,538 | Échec d'authentification pour: admin' OR '1'='1 | Module: views

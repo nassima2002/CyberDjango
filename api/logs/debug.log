@@ -1,0 +1,195 @@
+DEBUG 2025-11-02 15:59:18,815 utils 10044 14592 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 15:59:18,817 utils 10044 14592 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 15:59:18,838 utils 10044 14592 (0.015) SHOW FULL TABLES; args=None; alias=default
+DEBUG 2025-11-02 15:59:18,848 utils 10044 14592 (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2025-11-02 16:03:09,027 utils 10044 6960 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:03:09,028 utils 10044 6960 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:03:09,033 utils 10044 6960 (0.000) SELECT 1 AS `a` FROM `inscription` WHERE `inscription`.`email` = 'client@gmail.com' LIMIT 1; args=(1, 'client@gmail.com'); alias=default
+DEBUG 2025-11-02 16:03:09,038 utils 10044 6960 (0.016) SELECT 1 AS `a` FROM `inscription` WHERE `inscription`.`name` = 'client' LIMIT 1; args=(1, 'client'); alias=default
+DEBUG 2025-11-02 16:03:09,512 utils 10044 6960 (0.015) INSERT INTO `inscription` (`name`, `number`, `email`, `password`) VALUES ('client', 659265928, 'client@gmail.com', 'pbkdf2_sha256$390000$z0Z7sw1ZhEAceaHWWpzSF9$2FsBVO4WzUDOBMGbHrTo5IYq4eyiSMHJpEaaueiLHb4='); args=['client', 659265928, 'client@gmail.com', 'pbkdf2_sha256$390000$z0Z7sw1ZhEAceaHWWpzSF9$2FsBVO4WzUDOBMGbHrTo5IYq4eyiSMHJpEaaueiLHb4=']; alias=default
+DEBUG 2025-11-02 16:03:30,827 utils 10044 760 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:03:30,829 utils 10044 760 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:03:30,832 utils 10044 760 (0.000) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`name` = 'client' ORDER BY `inscription`.`id` ASC LIMIT 1; args=('client',); alias=default
+DEBUG 2025-11-02 16:03:31,229 utils 10044 760 (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-02 15:03:31.226205' AND `django_session`.`session_key` = 'aqkpwx3rfyg7yurl9phk6xmsjetus6ni') LIMIT 21; args=('2025-11-02 15:03:31.226205', 'aqkpwx3rfyg7yurl9phk6xmsjetus6ni'); alias=default
+DEBUG 2025-11-02 16:03:31,239 utils 10044 760 (0.000) UPDATE `django_session` SET `session_data` = 'eyJpZCI6Mn0:1vFZcB:HvhGH0Hhn_LhyzCccfXTyBlZuJ3hssRK8ZOhqmS-RQQ', `expire_date` = '2025-11-16 15:03:31.235170' WHERE `django_session`.`session_key` = 'aqkpwx3rfyg7yurl9phk6xmsjetus6ni'; args=('eyJpZCI6Mn0:1vFZcB:HvhGH0Hhn_LhyzCccfXTyBlZuJ3hssRK8ZOhqmS-RQQ', '2025-11-16 15:03:31.235170', 'aqkpwx3rfyg7yurl9phk6xmsjetus6ni'); alias=default
+DEBUG 2025-11-02 16:03:32,204 utils 10044 14552 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:03:32,206 utils 10044 14552 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:03:32,208 utils 10044 14552 (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-02 15:03:32.194733' AND `django_session`.`session_key` = 'aqkpwx3rfyg7yurl9phk6xmsjetus6ni') LIMIT 21; args=('2025-11-02 15:03:32.194733', 'aqkpwx3rfyg7yurl9phk6xmsjetus6ni'); alias=default
+DEBUG 2025-11-02 16:03:32,212 utils 10044 14552 (0.000) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`id` = 2 LIMIT 21; args=(2,); alias=default
+DEBUG 2025-11-02 16:03:32,239 utils 10044 14552 (0.000) SELECT `contrat`.`id`, `contrat`.`vehicule_id`, `contrat`.`client_id`, `contrat`.`date_debut`, `contrat`.`date_fin`, `contrat`.`prix_total`, `contrat`.`date_reservation` FROM `contrat` WHERE `contrat`.`client_id` = 2 ORDER BY `contrat`.`date_reservation` DESC; args=(2,); alias=default
+DEBUG 2025-11-02 16:03:38,093 utils 10044 15924 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:03:38,095 utils 10044 15924 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:03:38,097 utils 10044 15924 (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-02 15:03:38.087519' AND `django_session`.`session_key` = 'aqkpwx3rfyg7yurl9phk6xmsjetus6ni') LIMIT 21; args=('2025-11-02 15:03:38.087519', 'aqkpwx3rfyg7yurl9phk6xmsjetus6ni'); alias=default
+DEBUG 2025-11-02 16:03:38,101 utils 10044 15924 (0.016) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = 'aqkpwx3rfyg7yurl9phk6xmsjetus6ni' LIMIT 21; args=('aqkpwx3rfyg7yurl9phk6xmsjetus6ni',); alias=default
+DEBUG 2025-11-02 16:03:38,147 utils 10044 15924 (0.016) DELETE FROM `django_session` WHERE `django_session`.`session_key` IN ('aqkpwx3rfyg7yurl9phk6xmsjetus6ni'); args=('aqkpwx3rfyg7yurl9phk6xmsjetus6ni',); alias=default
+DEBUG 2025-11-02 16:04:16,987 utils 10044 15956 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:04:16,990 utils 10044 15956 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:04:16,992 utils 10044 15956 (0.000) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`name` = 'client\' OR \'1\'=\'1' ORDER BY `inscription`.`id` ASC LIMIT 1; args=("client' OR '1'='1",); alias=default
+DEBUG 2025-11-02 16:04:28,520 utils 10044 2780 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:04:28,521 utils 10044 2780 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:04:28,523 utils 10044 2780 (0.016) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`name` = 'client' ORDER BY `inscription`.`id` ASC LIMIT 1; args=('client',); alias=default
+DEBUG 2025-11-02 16:04:28,931 utils 10044 2780 (0.000) SELECT 1 AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0' LIMIT 1; args=(1, '1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0'); alias=default
+DEBUG 2025-11-02 16:04:28,946 utils 10044 2780 (0.016) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0', 'eyJpZCI6Mn0:1vFZd6:Qbbc38ENOz8S3VbOF8Y7eZVvwg6l7tpem3EZhmNly4Q', '2025-11-16 15:04:28.932407'); args=('1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0', 'eyJpZCI6Mn0:1vFZd6:Qbbc38ENOz8S3VbOF8Y7eZVvwg6l7tpem3EZhmNly4Q', '2025-11-16 15:04:28.932407'); alias=default
+DEBUG 2025-11-02 16:04:30,968 utils 10044 9100 (0.031) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:04:30,969 utils 10044 9100 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:04:30,971 utils 10044 9100 (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-02 15:04:30.936697' AND `django_session`.`session_key` = '1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0') LIMIT 21; args=('2025-11-02 15:04:30.936697', '1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0'); alias=default
+DEBUG 2025-11-02 16:04:30,977 utils 10044 9100 (0.016) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`id` = 2 LIMIT 21; args=(2,); alias=default
+DEBUG 2025-11-02 16:04:30,987 utils 10044 9100 (0.000) SELECT `contrat`.`id`, `contrat`.`vehicule_id`, `contrat`.`client_id`, `contrat`.`date_debut`, `contrat`.`date_fin`, `contrat`.`prix_total`, `contrat`.`date_reservation` FROM `contrat` WHERE `contrat`.`client_id` = 2 ORDER BY `contrat`.`date_reservation` DESC; args=(2,); alias=default
+DEBUG 2025-11-02 16:04:36,272 utils 10044 22224 (0.016) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:04:36,274 utils 10044 22224 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:04:36,276 utils 10044 22224 (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-02 15:04:36.265985' AND `django_session`.`session_key` = '1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0') LIMIT 21; args=('2025-11-02 15:04:36.265985', '1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0'); alias=default
+DEBUG 2025-11-02 16:04:36,279 utils 10044 22224 (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = '1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0' LIMIT 21; args=('1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0',); alias=default
+DEBUG 2025-11-02 16:04:36,324 utils 10044 22224 (0.047) DELETE FROM `django_session` WHERE `django_session`.`session_key` IN ('1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0'); args=('1yzk3wjhv4vc4dvsil4bn0ngrheuqzx0',); alias=default
+DEBUG 2025-11-02 16:05:40,005 utils 10044 3268 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:05:40,007 utils 10044 3268 (0.015) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:05:40,008 utils 10044 3268 (0.000) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`name` = 'client\' OR \'1\'=\'1' ORDER BY `inscription`.`id` ASC LIMIT 1; args=("client' OR '1'='1",); alias=default
+DEBUG 2025-11-02 16:06:14,074 utils 10044 19632 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:06:14,077 utils 10044 19632 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:06:14,079 utils 10044 19632 (0.000) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`name` = '\' OR \'1\'=\'1\' --' ORDER BY `inscription`.`id` ASC LIMIT 1; args=("' OR '1'='1' --",); alias=default
+DEBUG 2025-11-02 16:06:26,850 utils 10044 20696 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:06:26,852 utils 10044 20696 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:06:26,855 utils 10044 20696 (0.000) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`name` = 'client' ORDER BY `inscription`.`id` ASC LIMIT 1; args=('client',); alias=default
+DEBUG 2025-11-02 16:06:27,306 utils 10044 20696 (0.000) SELECT 1 AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'vy2xb2jqqpdx6x8yvpg1nhovv64px92j' LIMIT 1; args=(1, 'vy2xb2jqqpdx6x8yvpg1nhovv64px92j'); alias=default
+DEBUG 2025-11-02 16:06:27,309 utils 10044 20696 (0.000) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('vy2xb2jqqpdx6x8yvpg1nhovv64px92j', 'eyJpZCI6Mn0:1vFZf1:lozju7TX_ISicTV6lds7C3x0ePHC7g2-rIPn1aq01Pw', '2025-11-16 15:06:27.306580'); args=('vy2xb2jqqpdx6x8yvpg1nhovv64px92j', 'eyJpZCI6Mn0:1vFZf1:lozju7TX_ISicTV6lds7C3x0ePHC7g2-rIPn1aq01Pw', '2025-11-16 15:06:27.306580'); alias=default
+DEBUG 2025-11-02 16:06:30,633 utils 10044 11952 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:06:30,634 utils 10044 11952 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:06:30,636 utils 10044 11952 (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-02 15:06:30.626243' AND `django_session`.`session_key` = 'vy2xb2jqqpdx6x8yvpg1nhovv64px92j') LIMIT 21; args=('2025-11-02 15:06:30.626243', 'vy2xb2jqqpdx6x8yvpg1nhovv64px92j'); alias=default
+DEBUG 2025-11-02 16:06:30,639 utils 10044 11952 (0.000) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`id` = 2 LIMIT 21; args=(2,); alias=default
+DEBUG 2025-11-02 16:06:30,648 utils 10044 11952 (0.016) SELECT `contrat`.`id`, `contrat`.`vehicule_id`, `contrat`.`client_id`, `contrat`.`date_debut`, `contrat`.`date_fin`, `contrat`.`prix_total`, `contrat`.`date_reservation` FROM `contrat` WHERE `contrat`.`client_id` = 2 ORDER BY `contrat`.`date_reservation` DESC; args=(2,); alias=default
+DEBUG 2025-11-02 16:06:49,292 utils 10044 4000 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:06:49,294 utils 10044 4000 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:06:49,298 utils 10044 4000 (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-02 15:06:49.285887' AND `django_session`.`session_key` = 'vy2xb2jqqpdx6x8yvpg1nhovv64px92j') LIMIT 21; args=('2025-11-02 15:06:49.285887', 'vy2xb2jqqpdx6x8yvpg1nhovv64px92j'); alias=default
+DEBUG 2025-11-02 16:06:49,303 utils 10044 4000 (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = 'vy2xb2jqqpdx6x8yvpg1nhovv64px92j' LIMIT 21; args=('vy2xb2jqqpdx6x8yvpg1nhovv64px92j',); alias=default
+DEBUG 2025-11-02 16:06:49,347 utils 10044 4000 (0.031) DELETE FROM `django_session` WHERE `django_session`.`session_key` IN ('vy2xb2jqqpdx6x8yvpg1nhovv64px92j'); args=('vy2xb2jqqpdx6x8yvpg1nhovv64px92j',); alias=default
+DEBUG 2025-11-02 16:07:55,534 utils 10044 12528 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:07:55,535 utils 10044 12528 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:07:55,537 utils 10044 12528 (0.000) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`name` = 'admin\' OR \'1\'=\'1' ORDER BY `inscription`.`id` ASC LIMIT 1; args=("admin' OR '1'='1",); alias=default
+DEBUG 2025-11-02 16:08:46,343 utils 10044 22128 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:08:46,345 utils 10044 22128 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:08:46,347 utils 10044 22128 (0.000) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`name` = 'client' ORDER BY `inscription`.`id` ASC LIMIT 1; args=('client',); alias=default
+DEBUG 2025-11-02 16:08:46,740 utils 10044 22128 (0.000) SELECT 1 AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'jy2nq2wzllr6fxdahifel9svywrssx8x' LIMIT 1; args=(1, 'jy2nq2wzllr6fxdahifel9svywrssx8x'); alias=default
+DEBUG 2025-11-02 16:08:46,744 utils 10044 22128 (0.000) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('jy2nq2wzllr6fxdahifel9svywrssx8x', 'eyJpZCI6Mn0:1vFZhG:AgMwLm3wN_HpyI7ntAEBsqvFNmOKMdRIRWbOHX0hZNA', '2025-11-16 15:08:46.741815'); args=('jy2nq2wzllr6fxdahifel9svywrssx8x', 'eyJpZCI6Mn0:1vFZhG:AgMwLm3wN_HpyI7ntAEBsqvFNmOKMdRIRWbOHX0hZNA', '2025-11-16 15:08:46.741815'); alias=default
+DEBUG 2025-11-02 16:08:47,962 utils 10044 13652 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-11-02 16:08:47,964 utils 10044 13652 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-11-02 16:08:47,967 utils 10044 13652 (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-11-02 15:08:47.957078' AND `django_session`.`session_key` = 'jy2nq2wzllr6fxdahifel9svywrssx8x') LIMIT 21; args=('2025-11-02 15:08:47.957078', 'jy2nq2wzllr6fxdahifel9svywrssx8x'); alias=default
+DEBUG 2025-11-02 16:08:47,972 utils 10044 13652 (0.000) SELECT `inscription`.`id`, `inscription`.`name`, `inscription`.`number`, `inscription`.`email`, `inscription`.`password` FROM `inscription` WHERE `inscription`.`id` = 2 LIMIT 21; args=(2,); alias=default
+DEBUG 2025-11-02 16:08:47,982 utils 10044 13652 (0.000) SELECT `contrat`.`id`, `contrat`.`vehicule_id`, `contrat`.`client_id`, `contrat`.`date_debut`, `contrat`.`date_fin`, `contrat`.`prix_total`, `contrat`.`date_reservation` FROM `contrat` WHERE `contrat`.`client_id` = 2 ORDER BY `contrat`.`date_reservation` DESC; args=(2,); alias=default

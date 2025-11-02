@@ -1,0 +1,35 @@
+INFO 2025-11-02 15:59:17,777 autoreload 10044 18752 Watching for file changes with StatReloader
+INFO 2025-11-02 16:02:17,990 basehttp 10044 20936 "GET /login HTTP/1.1" 200 6504
+INFO 2025-11-02 16:02:42,407 basehttp 10044 2940 "GET /singup HTTP/1.1" 200 6723
+INFO 2025-11-02 16:03:09,513 views 10044 6960 Nouvel utilisateur créé: client (id=2)
+INFO 2025-11-02 16:03:09,515 basehttp 10044 6960 "POST /singup HTTP/1.1" 302 0
+INFO 2025-11-02 16:03:11,523 basehttp 10044 6236 "GET /login HTTP/1.1" 200 6504
+INFO 2025-11-02 16:03:31,230 views 10044 760 Connexion réussie: client (id=2)
+INFO 2025-11-02 16:03:31,242 basehttp 10044 760 "POST /login HTTP/1.1" 302 0
+INFO 2025-11-02 16:03:32,242 basehttp 10044 14552 "GET /main HTTP/1.1" 200 13404
+INFO 2025-11-02 16:03:38,148 views 10044 15924 Utilisateur déconnecté: id=2
+INFO 2025-11-02 16:03:38,151 basehttp 10044 15924 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-11-02 16:03:38,949 basehttp 10044 7008 "GET /login HTTP/1.1" 200 6504
+WARNING 2025-11-02 16:04:16,993 views 10044 15956 Échec d'authentification pour: client' OR '1'='1
+INFO 2025-11-02 16:04:17,037 basehttp 10044 15956 "POST /login HTTP/1.1" 200 6504
+INFO 2025-11-02 16:04:28,927 views 10044 2780 Connexion réussie: client (id=2)
+INFO 2025-11-02 16:04:28,952 basehttp 10044 2780 "POST /login HTTP/1.1" 302 0
+INFO 2025-11-02 16:04:30,989 basehttp 10044 9100 "GET /main HTTP/1.1" 200 13404
+INFO 2025-11-02 16:04:36,325 views 10044 22224 Utilisateur déconnecté: id=2
+INFO 2025-11-02 16:04:36,328 basehttp 10044 22224 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-11-02 16:04:37,784 basehttp 10044 18804 "GET /login HTTP/1.1" 200 6504
+WARNING 2025-11-02 16:05:40,011 views 10044 3268 Échec d'authentification pour: client' OR '1'='1
+INFO 2025-11-02 16:05:40,021 basehttp 10044 3268 "POST /login HTTP/1.1" 200 6504
+WARNING 2025-11-02 16:06:14,081 views 10044 19632 Échec d'authentification pour: ' OR '1'='1' --
+INFO 2025-11-02 16:06:14,088 basehttp 10044 19632 "POST /login HTTP/1.1" 200 6504
+INFO 2025-11-02 16:06:27,302 views 10044 20696 Connexion réussie: client (id=2)
+INFO 2025-11-02 16:06:27,315 basehttp 10044 20696 "POST /login HTTP/1.1" 302 0
+INFO 2025-11-02 16:06:30,651 basehttp 10044 11952 "GET /main HTTP/1.1" 200 13404
+INFO 2025-11-02 16:06:49,348 views 10044 4000 Utilisateur déconnecté: id=2
+INFO 2025-11-02 16:06:49,352 basehttp 10044 4000 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-11-02 16:06:51,089 basehttp 10044 2168 "GET /login HTTP/1.1" 200 6504
+WARNING 2025-11-02 16:07:55,538 views 10044 12528 Échec d'authentification pour: admin' OR '1'='1
+INFO 2025-11-02 16:07:55,545 basehttp 10044 12528 "POST /login HTTP/1.1" 200 6504
+INFO 2025-11-02 16:08:46,734 views 10044 22128 Connexion réussie: client (id=2)
+INFO 2025-11-02 16:08:46,749 basehttp 10044 22128 "POST /login HTTP/1.1" 302 0
+INFO 2025-11-02 16:08:47,986 basehttp 10044 13652 "GET /main HTTP/1.1" 200 13404
