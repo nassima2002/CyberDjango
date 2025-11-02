@@ -9,9 +9,12 @@ from docx import Document
 import pythoncom
 import docx2pdf
 from django.db import connection
-
 from .models import ContactForm, Registre, Vehicule, Contrat
-
+from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render, redirect
+from django.db import connection
+from django.views.decorators.csrf import csrf_exempt
 
 # ------------------------------
 # PAGES PUBLIQUES
@@ -48,35 +51,26 @@ def inscrir(request):
     return render(request, 'singup.html')
 
 
-
-#def login(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        password = request.POST.get('password')
-
-        try:
-            utilisateur = Registre.objects.get(name=name)
-        except Registre.DoesNotExist:
-            return redirect('login')
-
-        if utilisateur.password == password:
-            request.session['id'] = utilisateur.id
-            return redirect('main')
-
-        return redirect('login')
-
-    return render(request, 'login.html')
+   
 
 # ------------------------------
 # Injection sql vulnurabiliter
 # ------------------------------
 
+
+
+
+@csrf_exempt
 def login(request):
+    if request.method == "GET":
+        # afficher la page de connexion
+        return render(request, 'login.html')
+
     if request.method == "POST":
         username = request.POST.get("name")
         password = request.POST.get("password")
 
-        # ⚠️ Vulnérable à SQL Injection volontairement
+        # ⚠️ Vulnérable volontairement (SQL injection possible)
         query = f"SELECT * FROM inscription WHERE name = '{username}' AND password = '{password}'"
 
         with connection.cursor() as cursor:
@@ -84,11 +78,15 @@ def login(request):
             user = cursor.fetchone()
 
         if user:
-            request.session['id'] = user[0]  # suppose que l'id est la première colonne
-            return JsonResponse({"status": "success", "message": "Connexion réussie"})
+            request.session['id'] = user[0]
+            # Message succès
+            messages.success(request, f"Connexion réussie, bienvenue {username} !")
+            return redirect('main')  # redirection vers la page principale
         else:
-            return JsonResponse({"status": "error", "message": "Nom d'utilisateur ou mot de passe incorrect"})
-    
+            # Message erreur
+            messages.error(request, "Nom d'utilisateur ou mot de passe incorrect")
+            return redirect('login')
+
     return JsonResponse({"error": "Méthode non autorisée"}, status=405)
 
    
